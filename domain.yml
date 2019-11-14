@@ -1,0 +1,171 @@
+
+entities:
+  - job_function
+  - company
+  - email
+  - name
+  - amount-of-money
+  - number
+  - value
+  - current_api
+  - product
+  - feedback_value
+  - language
+  - nlu_part
+  - entity
+  - user_type
+  - package_manager
+  - location
+
+intents:
+  - enter_data: {use_entities: false}
+  - affirm
+  - greet
+  - deny
+  - ask_active_place
+  - ask_faq_calgary_name
+  - ask_faq_charlotte_name
+  - ask_faq_calgary_time
+  - ask_faq_charlotte_time
+  - ask_faq_business
+  - ask_faq_calgary
+  - ask_faq_charlotte
+  - ask_faq_city
+  - bye
+  - thank
+  - ask_whatismyname
+  - ask_time
+  - ask_languagesbot
+  - ask_weather
+  - out_of_scope
+  - ask_howdoing
+  - ask_builder
+  - ask_whoami
+  - ask_whoisit
+  - ask_whatspossible
+  - ask_wherefrom
+
+slots:
+  budget:
+    type: unfeaturized
+  company:
+    type: unfeaturized
+  email:
+    type: unfeaturized
+  business_email:
+    type: unfeaturized
+  job_function:
+    type: unfeaturized
+  person_name:
+    type: unfeaturized
+  use_case:
+    type: unfeaturized
+  feedback_value:
+    type: categorical
+    values:
+      - positive
+      - negative
+  feedback_message:
+    type: unfeaturized
+  current_api:
+    type: categorical
+    values:
+      - dialogflow
+      - luis
+  product:
+    type: categorical
+    values:
+      - core
+      - nlu
+      - stack
+  unknown_product:
+    type: unfeaturized
+  nlu_part:
+    type: categorical
+    values:
+      - entity recognition
+      - intent classification
+      - duckling
+  unknown_nlu_part:
+    type: unfeaturized
+  can_use_spacy:
+    type: bool
+  entity_extractor:
+    type: categorical
+    values:
+      - CRFEntityExtractor
+      - SpacyEntityExtractor
+      - DucklingHTTPExtractor
+  language:
+    type: unfeaturized
+  onboarding:
+    type: bool
+  suggestion:
+    type: unfeaturized
+  package_manager:
+    type: text
+  problem_description:
+    type: text
+  shown_privacy:
+    type: unfeaturized
+  name:
+    type: text
+  step:
+    type: unfeaturized
+
+
+templates:
+  utter_info_business:
+    - text: "Bharath Homes & Hotels is an Indian hotel chain. It is the India's newly building hospitality chain of leased and franchised hotels, homes & living spaces.Please visit our hotel portal for more information."
+  utter_info_city_calgary:
+  - text: "Calgary is a city in the Canadian province of Alberta. It is situated at the confluence of the Bow River and the Elbow River in the south of the province, in an area of foothills and prairie, about 80 km (50 mi) east of the front ranges of the Canadian Rockies and roughly 299 km (185 mi) south of the provincial capital of Edmonton. The city anchors the south end of the Statistics Canada-defined urban area, the Calgary–Edmonton Corridor."
+  utter_info_city_charlotte:
+    - text: "Charlotte is the most populous city in the U.S. state of North Carolina. Located in the Piedmont, it is the county seat of Mecklenburg County.Among Charlotte's many notable attractions, some of the most popular include the Carolina Panthers (NFL), the Charlotte Hornets (NBA), the Charlotte Knights (International League), the Charlotte Checkers(AHL), the Charlotte Independence (USL), Charlotte Hounds (Major League Lacrosse), two NASCAR Cup Series races and the NASCAR All-Star Race, the Wells Fargo Championship, the NASCAR Hall of Fame, the Charlotte Ballet, Children's Theatre of Charlotte, Carowinds amusement park, and the U.S. National Whitewater Center. For more information please click on link https://en.wikipedia.org/wiki/Charlotte,_North_Carolina"
+  utter_awesome:
+    - text: "Awesome, thanks! 👍"
+    - text: "Sweet, thank you! 😄"
+    - text: "Thanks! 👌"
+    - text: "Cool, thank you!"
+  utter_can_do:
+    - text: "Sure thing!"
+    - text: "Can do!"
+    - text: "You got it. 👍"
+  utter_greet_noname:
+    - text: "Hey!"
+    - text: "Hi!"
+    - text: "Hey there!"
+  utter_bye:
+    - text: "bye!"
+    - text: "Bye. Have a nice  day"
+  utter_language_info:
+    - text: "I know only in English language. Please communicate with me in English only." 
+  utter_default:
+    - text: "Sorry, I didn't get that 🤷🏻‍. Could you please rephrase?"
+    - text: "I didn't understand, could you rephrase that?"
+    - text: "I'm sorry, but I didn't understand you. Could you please rephrase what you just said?"
+    - text: "I'm afraid I didn't get what you just said. Could you rephrase that?"
+    - text: "I didn't quite get that, could you rephrase your message?"
+    - text: "Could you rephrase your message? I didn't get it, I'm sorry."
+  utter_human_handoff:
+    - text: "Could you speak with our Manager. Contact number is 00056324420."
+
+actions:
+  - utter_human_handoff
+  - utter_language_info
+  - utter_info_city_charlotte
+  - utter_info_city_calgary
+  - utter_info_business
+  - action_hello_world
+  - action_info_city
+  - action_info_charlotte
+  - action_info_calgary
+  - action_time_charlotte
+  - action_time_calgary
+  - action_address_calgary
+  - action_address_charlotte
+  - utter_greet_noname
+  - utter_awesome
+  - utter_can_do
+  - utter_greet
+  - utter_bye
+  - action_greet_user
